@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Games 🎮</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<nav>
+  <a href="home.html">⬅ Home</a>
+
+</nav>
+
+<section class="card">
+  <h2>Guess the Number 🎯</h2>
+  <p>Guess between 1 to 5</p>
+  <input id="guess">
+  <button onclick="guess()">Check</button>
+</section>
+<section class="card">
+  <h2>Tic Tac Toe 💙 (Yashii vs Computer 🤖)</h2>
+    <p id="turnInfo" style="text-align:center;font-weight:bold;">
+  Your turn 💙
+</p>
+
+  <div class="board">
+    <div onclick="playerMove(0)"></div>
+    <div onclick="playerMove(1)"></div>
+    <div onclick="playerMove(2)"></div>
+    <div onclick="playerMove(3)"></div>
+    <div onclick="playerMove(4)"></div>
+    <div onclick="playerMove(5)"></div>
+    <div onclick="playerMove(6)"></div>
+    <div onclick="playerMove(7)"></div>
+    <div onclick="playerMove(8)"></div>
+  </div>
+
+  <button class="restart-btn" onclick="reset()">Restart 🔄</button>
+
+</section>
+
+
+<section class="card">
+  <h2>Click to Relax 💙</h2>
+  <button onclick="relax()">Click Me 🌸</button>
+</section>
+<section class="card">
+  <h2>Mood Booster 🌸</h2>
+  <button onclick="mood()">Boost Mood 💙</button>
+</section>
+<section class="card">
+  <h2>Click Challenge ⏱️</h2>
+  <p>Clicks: <span id="count">0</span></p>
+  <button onclick="clickGame()">Click Fast!</button>
+</section>
+<section class="card">
+  <h2>Answer This 😄</h2>
+  <p>Are you cute? 💙</p>
+  <button onclick="alert('YES 💙 Obviously 😌')">Yes</button>
+  <button onclick="alert('Wrong answer 😤 Try again')">No</button>
+</section>
+
+
+<script src="js/games.js"></script>
+</body>
+</html>

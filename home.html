@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yashii 💙</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <h2>Yashii 💙</h2>
+  <a href="games.html">Games 🎮</a>
+</nav>
+
+<section class="hero">
+  <h1>Hello Yashii 💙</h1>
+  <p>
+    Paramedical Radiology student 👩‍⚕️ <br>
+    Sometimes stress 😔 but always cute & beautiful ✨ <br>
+    Happiest when talking to *you* 😊
+  </p>
+</section>
+<section class="card">
+  <h2>🎂 Birthday Countdown 💙</h2>
+  <p id="countdown"></p>
+</section>
+
+<script>
+  const birthday = new Date(new Date().getFullYear(), 10, 6); // Nov = 10
+
+  function updateCountdown() {
+    const now = new Date();
+    if (now > birthday) {
+      birthday.setFullYear(birthday.getFullYear() + 1);
+    }
+
+    const diff = birthday - now;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    document.getElementById("countdown").innerText =
+      days + " days left for Yashii's birthday 🎉💙";
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+<section class="card">
+  <h2>About You 💙</h2>
+  <p>
+    Born on <b>6th November 🎂</b><br>
+    Loves blue hearts 💙<br>
+    Strong + sweet + caring soul 🌸
+  </p>
+</section>
+<section class="card">
+  <h2>💌 Secret Message</h2>
+  <p>Click panninaa oru secret irukku 👀💙</p>
+  <button onclick="showSecret()">Reveal 💙</button>
+
+  <p id="secretMsg" style="display:none; margin-top:15px;">
+    Hey Yashii 💙<br><br>
+    Stress vandhaalum, nee romba strong da 💪<br>
+    Nee smile panninaa world better aagum 😊<br>
+    And yes… nee romba cute & beautiful ✨💙
+  </p>
+</section>
+
+<script>
+  function showSecret() {
+    document.getElementById("secretMsg").style.display = "block";
+  }
+</script>
+
+
+<section class="card">
+  <h2>Feeling Stress?</h2>
+  <p>Take a deep breath 🌬️ and play a small game 🎮</p>
+  <a class="btn" href="games.html">Play Games</a>
+</section>
+
+<div id="hearts"></div>
+<script>
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "💙";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }, 600);
+</script>
+
+
+
+<footer>
+  Made with 💙 just for Yashii
+</footer>
+
+
+</body>
+</html>

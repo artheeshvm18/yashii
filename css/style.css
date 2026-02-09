@@ -1,0 +1,267 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #e8f1ff;
+  color: #003366;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  animation: pop 1s;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px;
+}
+
+button, .btn {
+  background: #2b7cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+nav {
+  background: #2b7cff;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px;
+  animation: fade 2s;
+}
+
+.card {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  animation: slide 1.5s;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(80px, 25vw));
+  gap: 12px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.board div {
+  aspect-ratio: 1 / 1;      /* perfect square */
+  background: #dbe9ff;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: transform 0.15s ease, background 0.2s;
+}
+
+/* touch feedback */
+.board div:active {
+  transform: scale(0.92);
+  background: #b7d3ff;
+}
+.restart-btn {
+  display: block;
+  margin: 30px auto;
+}
+/* ===== LOGIN PAGE ===== */
+
+.login-box {
+  width: 90%;
+  max-width: 350px;
+  background: white;
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 60, 120, 0.2);
+  animation: loginPop 0.8s ease;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #2b7cff;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid #bcd7ff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #2b7cff;
+  box-shadow: 0 0 0 2px rgba(43,124,255,0.2);
+}
+
+.login-box button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #2b7cff, #6fa8ff);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-box button:hover {
+  box-shadow: 0 8px 20px rgba(43,124,255,0.4);
+}
+
+.login-box button:active {
+  transform: scale(0.95);
+}
+
+#msg {
+  margin-top: 12px;
+  color: #ff4d4d;
+  font-size: 0.95rem;
+}
+
+/* ===== LOGIN ANIMATION ===== */
+
+@keyframes loginPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .login-box h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .restart-btn {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 14px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    z-index: 1000;
+  }
+}
+
+.win-heart {
+  position: fixed;
+  top: -20px;
+  animation: fall 3s linear;
+  opacity: 0.9;
+  z-index: 999;
+}
+
+@keyframes fall {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100vh); }
+}
+
+
+.win-heart {
+  position: fixed;
+  top: -20px;
+  animation: fall 3s linear;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+.heart {
+  position: fixed;
+  bottom: 0;
+  animation: floatUp 5s linear;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+
+@keyframes fade {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes slide {
+  from {transform: translateY(40px);}
+  to {transform: translateY(0);}
+}
+
+@keyframes pop {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 20px; }
+}
